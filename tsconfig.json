@@ -1,21 +1,32 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "CommonJS",
-    "types": [
-      "node",
-      "@wdio/globals/types"
-    ],
-    "lib": ["es2021", "dom"],
-    "target": "es2021"
+      "moduleResolution": "node",
+      "module": "ESNext",
+      "target": "es2022",
+      "baseUrl": ".",
+      "lib": [
+          "es2022",
+          "dom"
+      ],
+      "types": [
+          "node",
+          "@wdio/globals/types"
+      ],
+      "skipLibCheck": true,
+      "noEmit": true,
+      "allowImportingTsExtensions": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noFallthroughCasesInSwitch": true
   },
-
   "include": [
-    "features/**/*.ts",
-    "test/**/*.ts"
+      "test",
+      "wdio.conf.ts",
+      "main",
+      "types"
   ],
-
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
