@@ -66,7 +66,7 @@ export const config: WebdriverIOConfig = {
                 //'start-maximized',
                 //'no-sandbox',
                 'window-size=1920,1080',
-                //'headless=new',
+                'headless=new',
             ]
         }
         //},{
