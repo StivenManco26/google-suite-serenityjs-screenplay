@@ -33,6 +33,11 @@ export const config: WebdriverIOConfig = {
     specs: [
         './test/**/*.feature'
     ],
+    suites: {
+        translate: [
+            './test/features/GoogleTranslate.feature'
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
