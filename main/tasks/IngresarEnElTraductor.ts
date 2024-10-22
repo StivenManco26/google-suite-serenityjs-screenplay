@@ -7,6 +7,9 @@ export class IngresarEnElTraductor {
         Task.where(`#actor ingresa la palabra ${palabra} en el cuadro de texto`,
             Enter.theValue(palabra).into(GoogleTranslatePage.textArea()),
             Wait.upTo(Duration.ofSeconds(5)).until(GoogleTranslatePage.idiomaDestinoInglesButton(), isVisible()),
-            Click.on(GoogleTranslatePage.idiomaDestinoInglesButton())
+            Check.whether(GoogleTranslatePage.idiomaDestinoSpan().text(), equals("inglés"))
+            .andIfSo(
+                Click.on(GoogleTranslatePage.idiomaDestinoInglesButton())
+            )
         )
 }
