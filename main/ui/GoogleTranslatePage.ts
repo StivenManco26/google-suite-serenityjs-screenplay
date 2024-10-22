@@ -7,4 +7,6 @@ export const GoogleTranslatePage = {
         PageElement.located(By.xpath("//span[@class='ryNqvb']")).describedAs('label texto traducido'),
     idiomaDestinoInglesButton: () =>
         PageElement.located(By.xpath("//button[@data-language-code='en' and @id='i16']")).describedAs('botón idioma destino Ingles'),
+    idiomaDestinoSpan: () =>
+        PageElement.located(By.xpath("//button[@data-language-code='en' and @id='i16']/span[1]/span")).describedAs("span idioma destino")
 }
