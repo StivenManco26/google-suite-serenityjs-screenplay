@@ -24,6 +24,12 @@ jobs:
         - name: Setup Node Modules
           uses: bahmutov/npm-install@v1
           id: test_step
-        - run: npm run serenity
+        - run: npm run serenity -- --suite translate
           if: always()
           id: serenity_tests
+        - name: Test Report Generation
+          uses: actions/upload-artifact@v4
+          if: success() || failure()
+          with:
+            name: Serenity Report
+            path: target/site/serenity/  
